@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+    --font-inter: 'Inter', system-ui, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-brand-bg text-brand-text font-body;
+  }
+
+  ::selection {
+    background-color: theme('colors.brand.accent');
+    color: white;
+  }
+
+  /* scrollbar discreta */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: theme('colors.brand.border-d');
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  .container-brand {
+    @apply max-w-content mx-auto px-6 md:px-12 lg:px-20;
+  }
+
+  .section-pad {
+    @apply py-20 lg:py-28;
+  }
+
+  .label-tag {
+    @apply text-2xs font-medium tracking-widest uppercase text-brand-muted;
+  }
+
+  .heading-display {
+    @apply font-heading font-light leading-none tracking-tight;
+  }
+
+  /* fabric texture SVG como background utility */
+  .fabric-texture {
+    background-image: repeating-linear-gradient(
+      90deg,
+      transparent, transparent 39px,
+      rgba(255,255,255,0.015) 40px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent, transparent 39px,
+      rgba(255,255,255,0.015) 40px
+    );
+  }
+}
+
+@layer utilities {
+  .pause-on-hover:hover .animate-marquee {
+    animation-play-state: paused;
+  }
+
+  /* gradiente hero */
+  .hero-gradient {
+    background: linear-gradient(
+      to top,
+      rgba(20, 18, 16, 0.78) 0%,
+      rgba(20, 18, 16, 0.18) 55%,
+      transparent 100%
+    );
+  }
+
+  /* fundo hero — substitua por next/image em produção */
+  .hero-bg-color {
+    background: linear-gradient(
+      135deg,
+      #3d2f22 0%,
+      #6b4c32 30%,
+      #8c6a48 60%,
+      #b89070 100%
+    );
+  }
+}
