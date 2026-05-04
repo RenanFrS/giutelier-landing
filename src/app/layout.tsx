@@ -28,7 +28,6 @@ export const metadata: Metadata = {
     description: SITE_CONFIG.description,
   },
   robots: { index: true, follow: true },
-  icons: { icon: '/favicon.ico' },
 }
 
 export const viewport: Viewport = {
