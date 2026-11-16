@@ -62,3 +62,6 @@ Icon?
 
 # claude / agent local state
 .claude/settings.local.json
+
+# Versões de imagem geradas no build (scripts/gerar-imagens.mjs)
+/public/_img/
